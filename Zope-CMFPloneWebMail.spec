@@ -3,7 +3,7 @@ Summary:	E-mail client for Plone (IMAP)
 Summary(pl):	Klient poczty elektronicznej (IMAP) dla Plone
 Name:		Zope-CMF%{zope_subname}
 Version:	1.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Development/Tools
 Source0:	http://plonewebmail.openprojects.it/Members/admin/%{zope_subname}-%{version}final.tar.gz
