@@ -10,6 +10,7 @@ Source0:	http://plonewebmail.openprojects.it/Members/admin/%{zope_subname}-%{ver
 # Source0-md5:	255541e6a43c9de4fa6fccce523c5ffa
 URL:		http://plonewebmail.openprojects.it/
 Requires(post,postun):	/usr/sbin/installzopeproduct
+BuildRequires:  python
 %pyrequires_eq	python-modules
 Requires:	Zope
 Requires:	Zope-CMF >= 1:1.4
