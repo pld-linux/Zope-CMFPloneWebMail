@@ -1,6 +1,6 @@
 %define		zope_subname	PloneWebMail
 Summary:	E-mail client for Plone (IMAP)
-Summary(pl):	Klient poczty elektronicznej dla Plone (IMAP)
+Summary(pl):	Klient poczty elektronicznej (IMAP) dla Plone
 Name:		Zope-CMF%{zope_subname}
 Version:	1.0
 Release:	1
@@ -21,12 +21,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 PloneWebMail is a e-mail client for Plone (IMAP).
 
 %description -l pl
-PloneWebMail jest klientem poczty elektronicznej dla Plone (IMAP).
+PloneWebMail jest klientem poczty elektronicznej (IMAP) dla Plone.
 
 %prep
 %setup -q -n %{zope_subname}
-
-%build
 
 %install
 rm -rf $RPM_BUILD_ROOT
