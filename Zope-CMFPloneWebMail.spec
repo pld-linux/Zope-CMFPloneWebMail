@@ -3,7 +3,7 @@ Summary:	E-mail client for Plone (IMAP)
 Summary(pl):	Klient poczty elektronicznej (IMAP) dla Plone
 Name:		Zope-CMF%{zope_subname}
 Version:	1.0
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Development/Tools
 Source0:	http://plonewebmail.openprojects.it/Members/admin/%{zope_subname}-%{version}final.tar.gz
@@ -12,7 +12,7 @@ URL:		http://plonewebmail.openprojects.it/
 Requires(post,postun):	/usr/sbin/installzopeproduct
 %pyrequires_eq	python-modules
 Requires:	Zope
-Requires:	Zope-CMF >= 1.3
+Requires:	Zope-CMF >= 1:1.4
 Requires:	Zope-CMFPlone >= 2.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
