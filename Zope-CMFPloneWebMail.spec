@@ -9,8 +9,9 @@ Group:		Development/Tools
 Source0:	http://plonewebmail.openprojects.it/Members/admin/%{zope_subname}-%{version}final.tar.gz
 # Source0-md5:	255541e6a43c9de4fa6fccce523c5ffa
 URL:		http://plonewebmail.openprojects.it/
-Requires(post,postun):	/usr/sbin/installzopeproduct
 BuildRequires:	python
+BuildRequires:	rpmbuild(macros) >= 1.268
+Requires(post,postun):	/usr/sbin/installzopeproduct
 %pyrequires_eq	python-modules
 Requires:	Zope
 Requires:	Zope-CMF >= 1:1.4
@@ -43,16 +44,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /usr/sbin/installzopeproduct %{_datadir}/%{name} %{zope_subname}
-if [ -f /var/lock/subsys/zope ]; then
-	/etc/rc.d/init.d/zope restart >&2
-fi
+%service -q zope restart
 
 %postun
 if [ "$1" = "0" ]; then
 	/usr/sbin/installzopeproduct -d %{zope_subname}
-	if [ -f /var/lock/subsys/zope ]; then
-		/etc/rc.d/init.d/zope restart >&2
-	fi
+	%service -q zope restart
 fi
 
 %files
